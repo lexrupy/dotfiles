@@ -1,0 +1,37 @@
+function _git_ps1 {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+C_RED="\[\033[0;31m\]"
+C_GREEN="\[\033[0;32m\]"
+C_YELLOW="\[\033[01;33m\]"
+C_BLUE="\[\033[0;34m\]"
+C_MAGENTA="\[\033[0;35m\]"
+C_CYAN="\[\033[0;36m\]"
+C_WHITE="\[\033[0;37m\]"
+C_RESET="\[\033[00m\]"
+
+NAME=alexandre@MacBook
+export PS1="$C_CYAN\$(date +%H:%M) $C_GREEN\w$C_YELLOW \$(_git_ps1)$C_RESET\$ "
+
+#export PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/[\[\033[01;33m\]\1\[\033[00m\]]/')$ "
+
+export EDITOR="mate -w"
+
+# Oracle
+export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
+export SQLPATH="/usr/local/oracle/instantclient_10_2"
+export TNS_ADMIN="/usr/local/oracle/instantclient_10_2/network/admin"
+export NLS_LANG="AMERICAN_AMERICA.WE8ISO8859P1"
+export PATH=$PATH:$DYLD_LIBRARY_PATH
+
+# Java and Java-like
+
+JRUBY_HOME=/usr/share/java/jruby-1.4.0
+
+# Paths
+JRUBY=${JRUBY_HOME}/bin
+POSTGRES=/usr/local/pgsql/bin
+MYSQL=/usr/local/mysql/bin
+
+export PATH=${PATH}:${POSTGRES}:${MYSQL}:${JRUBY}
