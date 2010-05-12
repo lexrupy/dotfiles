@@ -32,5 +32,6 @@ export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 POSTGRES=/usr/local/pgsql/bin
 MYSQL=/usr/local/mysql/bin
+FIREBIRD=/Library/Frameworks/Firebird.framework/Resources/bin
 
-export PATH=${PATH}:${POSTGRES}:${MYSQL}
+export PATH=${PATH}:${POSTGRES}:${MYSQL}:${FIREBIRD}
