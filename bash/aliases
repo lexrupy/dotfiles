@@ -8,17 +8,18 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
+alias gpl='git pull'
+alias gps='git push'
+alias gdf='git diff'
+alias gic='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
+alias gib='git branch'
+alias gist='git status -s'
+alias gil='git log --oneline --decorate'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-# rails
+# rails 2 @@deprecated
 alias sc='script/console'
 alias ss='script/server'
 alias sg='script/generate'
