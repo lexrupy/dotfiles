@@ -15,7 +15,7 @@ C_CYAN="\[\033[0;36m\]"
 C_WHITE="\[\033[0;37m\]"
 C_RESET="\[\033[00m\]"
 
-NAME=${USER}@MacBook
+
 export PS1="$C_CYAN\$(date +%H:%M) $C_GREEN\w$C_RED\$(_rvm_ps1)$C_YELLOW \$(_git_ps1)$C_RESET\$ "
 
 #export PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/[\[\033[01;33m\]\1\[\033[00m\]]/')$ "
