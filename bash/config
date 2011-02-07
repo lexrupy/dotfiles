@@ -3,7 +3,8 @@ function _git_ps1 {
 }
 
 function _rvm_ps1 {
-  ~/.rvm/bin/rvm-prompt i v g 2> /dev/null | sed -e '/^system/d' -e 's/\(.*\)/ [\1]/'
+  #~/.rvm/bin/rvm-prompt i v g 2> /dev/null | sed -e '/^system/d' -e 's/\(.*\)/ [\1]/'
+  ~/.rvm/bin/rvm-prompt v g 2> /dev/null | sed -e '/^system/d' -e 's/\(.*\)/ [\1]/'
 }
 
 C_RED="\[\033[0;31m\]"
