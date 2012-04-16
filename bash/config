@@ -19,20 +19,25 @@ C_RESET="\[\033[00m\]"
 
 export PS1="$C_CYAN\$(date +%H:%M) $C_GREEN\w$C_RED\$(_rvm_ps1)$C_YELLOW \$(_git_ps1)$C_RESET\$ "
 
-#export PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/[\[\033[01;33m\]\1\[\033[00m\]]/')$ "
-
 export EDITOR="mate -w"
 export GIT_EDITOR=${EDITOR}
 
-# Oracle
-export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
-export SQLPATH="/usr/local/oracle/instantclient_10_2"
-export TNS_ADMIN="/usr/local/oracle/instantclient_10_2/network/admin"
-export NLS_LANG="AMERICAN_AMERICA.WE8ISO8859P1"
-export PATH=$PATH:$DYLD_LIBRARY_PATH
+# # Oracle
+# # export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/usr/local/oracle/instantclient_10_2"
+# export SQLPATH="/usr/local/oracle/instantclient_10_2"
+# export TNS_ADMIN="/usr/local/oracle/instantclient_10_2/network/admin"
+# export NLS_LANG="AMERICAN_AMERICA.WE8ISO8859P1"
+# # export PATH=$PATH:$DYLD_LIBRARY_PATH
+# export PATH=$PATH
+#
+#
 
-POSTGRES=/usr/local/pgsql/bin
+MYSQL_LIB="/usr/local/mysql/lib"
 MYSQL=/usr/local/mysql/bin
-FIREBIRD=/Library/Frameworks/Firebird.framework/Resources/bin
 
-export PATH=${PATH}:${POSTGRES}:${MYSQL}:${FIREBIRD}
+# FIREBIRD=/Library/Frameworks/Firebird.framework/Resources/bin
+#
+# export PATH=${PATH}:${POSTGRES}:${MYSQL}:${FIREBIRD}
+
+export PATH=${PATH}:${MYSQL}
+export DYLD_LIBRARY_PATH=${MYSQL_LIB}:${DYLD_LIBRARY_PATH}
